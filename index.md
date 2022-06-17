@@ -17,7 +17,7 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
   -Password
 -Submit this information in order to create an account. "Sign up" successful will appear and then you may log in and out of the app. 
 
-# Databases
+### Databases
 
 
 ```markdown
@@ -44,7 +44,7 @@ Syntax highlighted code block
 
 
 
-#Software Engineering
+###Software Engineering
 
 ```markdown
 Syntax highlighted code block
@@ -69,7 +69,7 @@ Syntax highlighted code block
 
 
 
-#Algorithms and Data Structures
+###Algorithms and Data Structures
 ```markdown
 Syntax highlighted code block
 
