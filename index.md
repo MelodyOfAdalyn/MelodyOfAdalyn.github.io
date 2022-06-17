@@ -20,7 +20,7 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ### Databases
   The main database used within this app is Firebase. In this case, Firebase is being utilized in order to store user credentials. This allows the user to enter and exit the application along with restore credentials. 
   
- #Login 
+# Login 
  -Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
 ```markdown
 Syntax highlighted code block
@@ -39,7 +39,7 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-  #Forgot Password
+# Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
   ```markdown
 Syntax highlighted code block
@@ -58,8 +58,8 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```  
-  #Register
-  -User must enter the sign up page first in order to get full functionality of the application. 
+# Register
+  - User must enter the sign up page first in order to get full functionality of the application. 
 
   ```markdown
 Syntax highlighted code block
@@ -104,9 +104,6 @@ Syntax highlighted code block
 
 
 
-
-
-
 ### Algorithms and Data Structures
 ```markdown
 Syntax highlighted code block
@@ -126,18 +123,6 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-
-
-
-
-
-
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MelodyOfAdalyn/MelodyOfAdalyn.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
