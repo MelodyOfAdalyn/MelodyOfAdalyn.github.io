@@ -18,8 +18,10 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 - Submit this information in order to create an account. "Sign up" successful will appear and then you may log in and out of the app. 
 
 ### Databases
-
-
+  The main database used within this app is Firebase. In this case, Firebase is being utilized in order to store user credentials. This allows the user to enter and exit the application along with restore credentials. 
+  
+ #Login 
+ -Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
 ```markdown
 Syntax highlighted code block
 
@@ -37,9 +39,45 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+  #Forgot Password
+  - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
+  ```markdown
+Syntax highlighted code block
 
+# Header 1
+## Header 2
+### Header 3
 
+- Bulleted
+- List
 
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```  
+  #Register
+  -User must enter the sign up page first in order to get full functionality of the application. 
+
+  ```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```  
 
 
 
