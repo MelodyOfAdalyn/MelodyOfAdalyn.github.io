@@ -44,7 +44,7 @@ Syntax highlighted code block
 
 
 
-###Software Engineering
+### Software Engineering
 
 ```markdown
 Syntax highlighted code block
@@ -69,7 +69,7 @@ Syntax highlighted code block
 
 
 
-###Algorithms and Data Structures
+### Algorithms and Data Structures
 ```markdown
 Syntax highlighted code block
 
