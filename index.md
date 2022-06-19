@@ -180,9 +180,9 @@ private void forgotPassword() {
 
 
 
-#Homepage
--Main page after logging in, user can scroll through the events available
--Favorites buttion is implemented on the screen but is not functional at this time
+# Homepage
+- Main page after logging in, user can scroll through the events available
+- Favorites button is implemented on the screen but is not functional at this time
 
 <p align="center">
   <img width="460" height="700" src="homepage.png">
