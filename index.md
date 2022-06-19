@@ -28,9 +28,11 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
  
  
  -Enhanced code from Login Feature with Firebase
+<p align="center">
+  <img width="460" height="700" src="loginpage.png">
+</p>
+ 
 ```markdown
-Syntax highlighted code block
-
 //User clicks the login_button in attempt to login to the application
         login_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,10 +67,6 @@ Syntax highlighted code block
             }
 
         });
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 # Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
