@@ -1,7 +1,7 @@
 # Android Event App
 
 ## Introduction
-Welcome to the Android App! The primary purpose of the app is to allow the user to monitor, add, or remove apps. Originally, it was created and mainly functioned as a display then an interactive piece. Now, the user is able to login into the app through Firebase and navigate the app in order to add or remove events froma list. Along with view account information within the settings page. 
+Welcome to the Android App! The primary purpose of the app is to allow the user to monitor, add, or remove events. Originally, it was created and mainly functioned as a display then an interactive piece. Now, the user is able to login into the app through Firebase and navigate the app in order to add or remove events from a list. Along with view account information within the settings page. 
 
 ## Table of Contents
 - Instructions
@@ -22,11 +22,13 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 - Submit this information in order to create an account. "Sign up" successful will appear and then you may log in and out of the app. 
 
 # Databases
-  The main database used within this app is Firebase. In this case, Firebase is being utilized in order to store user credentials. This allows the user to enter and exit the application along with restore credentials. 
+  The main database used within this app is Firebase. In this case, Firebase is being utilized in order to store user credentials. This allows the user to enter and exit the application along with restore credentials. The usage of firebase also aids in increasing security around user logins. 
+  Additionally, SQLite is also being utilized for storing event information, but is not functional at this point in time within the files. 
   
 # Register
   - User must enter the sign up page first in order to get full functionality of the application. 
   - Enter all credentials in order to gain access to the apps features
+  - If fields are not filled out or passwords do not match the user will not be able to sign up
 
 <p align="center">
   <img width="460" height="700" src="register.png">
@@ -74,17 +76,42 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
                     }
 
 ```   
+
+-Example code from activity_register.xml
+
+  ```markdown
+
+<!--First Name of User-->
+  <EditText
+      android:id="@+id/register_Name"
+      android:layout_width="332dp"
+      android:layout_height="54dp"
+      android:background="@drawable/edit_text_bg"
+      android:hint="Full Name"
+      android:paddingLeft="20dp"
+      android:paddingTop="10dp"
+      android:paddingBottom="10dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.493"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.324"
+      app:layout_constraintWidth_percent=".8" />
+```   
+
+
 - Link to Login Code: [Register](AndroidEnhancement.zip), 
 - Register.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Register
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_register.xml  
   
 
 # Login 
- -Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
- -Original Code from Login Features without Firebase
+ - Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
+ - Original Code from Login Features without Firebase
  
 
- -Enhanced code from Login Feature with Firebase
+ - Enhanced code from Login Feature with Firebase
 <p align="center">
   <img width="460" height="700" src="loginpage.png">
 </p>
@@ -125,6 +152,31 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 
         });
 ```
+
+
+-Example xml code from activity_login.xml
+
+```markdown
+<!--Email or username edit text for the user to enter information-->
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="402dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_bg"
+        android:drawablePadding="20dp"
+        android:hint="Email Address"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
+```
+
 - Link to Login Code: [Login](AndroidEnhancement.zip), 
 - Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_login.xml  
@@ -173,6 +225,33 @@ private void forgotPassword() {
                 .create()
                 .show();
 ```  
+
+- Example code from activity_forgot_password.xml
+
+```markdown
+<!--Forgot Password function, enter email to get password link-->
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="310dp"
+        android:layout_height="64dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/edit_text_bg"
+        android:drawablePadding="20dp"
+        android:hint="Email"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037" />
+
+```  
+
+
 - Link to Forgot Password: [Forgot Password](AndroidEnhancement.zip), 
 - Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
 - activity_forgot_password.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_forgot_password.xml  
@@ -229,6 +308,30 @@ private void forgotPassword() {
 
         return view;
 ```
+
+- Example code from fragment_home.xml
+
+```markdown
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recview"
+            android:layout_width="380dp"
+            android:layout_height="828dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </ScrollView>
+```
+
+
 - Link to Home Page: [Home](AndroidEnhancement.zip), 
 - HomeFragment.class:AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\ui\home\HomeFragment
 - fragment_home.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\fragment_home.xml
@@ -259,6 +362,16 @@ public class FavoritesFragment extends Fragment {
 
         return root;
     }
+```
+-Example of fragment_favorites.xml
+
+```markdown
+  <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="?attr/actionBarSize"
+        android:clipToPadding="false"/>
 ```
 - Link to Favorites Code: [Favorites](AndroidEnhancement.zip), 
 - FavoritesFragment.class: AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\dashboard\FavoritesFragment
@@ -296,8 +409,57 @@ public class ProfileFragment extends Fragment {
         return v;
     }
 ```
+
+-Example of fragment_profile.xml
+```markdown
+<!---Option 1: in settings-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation = "vertical"
+                android:padding="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/settingoption"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="TODO"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_baseline_notifications_24" />
+
+                    <TextView
+                        android:layout_width="113dp"
+                        android:layout_height="29dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="170dp"
+                        android:text="Notifications"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src = "@drawable/ic_baseline_arrow_forward_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="12dp"/>
+
+
+                </RelativeLayout>
+```
+
 - Link to Profile Code: [Profile](AndroidEnhancement.zip), 
-- AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\notifications\ProfileFragment
+- Profile Fragments.class: AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\notifications\ProfileFragment
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layoutfragment_profile.xml  
 
 
