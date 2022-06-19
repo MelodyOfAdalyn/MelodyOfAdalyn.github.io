@@ -21,7 +21,7 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
   - Password
 - Submit this information in order to create an account. "Sign up" successful will appear and then you may log in and out of the app. 
 
-### Databases
+# Databases
   The main database used within this app is Firebase. In this case, Firebase is being utilized in order to store user credentials. This allows the user to enter and exit the application along with restore credentials. 
   
 # Register
@@ -234,23 +234,31 @@ private void forgotPassword() {
 - fragment_home.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\fragment_home.xml
 
 
-### Algorithms and Data Structures
+# Favorites page
+-Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
+
 ```markdown
-Syntax highlighted code block
+public class FavoritesFragment extends Fragment {
 
-# Header 1
-## Header 2
-### Header 3
+    private RecyclerView recyclerView;
+    private FavDB favDB;
+    private List<FavEvent> favEventList = new ArrayList<>();
+    private FavAdapter favAdapter;
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_favorites,container,false);
 
-**Bold** and _Italic_ and `Code` text
+        favDB = new FavDB(getActivity());
+        recyclerView = root.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-[Link](url) and ![Image](src)
+        loadData();
+
+        return root;
+    }
 ```
 
 
