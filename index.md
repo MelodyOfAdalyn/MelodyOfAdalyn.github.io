@@ -311,7 +311,7 @@ private void forgotPassword() {
 # HomeFragment.Class Features Before Enhancements
 
 <p align="center">
-  <img width="460" height="700" src="">
+  <img width="460" height="700" src="originalhome">
 </p>
 
 ```markdown
