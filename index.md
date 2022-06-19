@@ -30,6 +30,23 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
   - Enter all credentials in order to gain access to the apps features
   - If fields are not filled out or passwords do not match the user will not be able to sign up
 
+## Register.class Before Enhancements
+
+<p align="center">
+  <img width="460" height="700" src="originalregister.png">
+</p>
+
+```markdown
+public class Register extends AppCompatActivity {
+//Should get called to the second screen and display the dashboard
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+    }
+}
+``` 
+## Register.class After Enhancements
 <p align="center">
   <img width="460" height="700" src="register.png">
 </p>
@@ -77,7 +94,7 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 
 ```   
 
--Example code from activity_register.xml
+## Example code from activity_register.xml
 
   ```markdown
 
@@ -101,17 +118,42 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ```   
 
 
-- Link to Login Code: [Register](AndroidEnhancement.zip), 
+- Link to Enhanced Code: [Register](AndroidEnhancement.zip)
 - Register.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Register
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_register.xml  
   
 
 # Login 
  - Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
- - Original Code from Login Features without Firebase
- 
+ - 
+## Login.class Before Enhancements
+ <p align="center">
+  <img width="460" height="700" src="">
+</p>
 
- - Enhanced code from Login Feature with Firebase
+```markdown
+
+ loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
+            @Override
+            public void onChanged(@Nullable LoginFormState loginFormState) {
+                if (loginFormState == null) {
+                    return;
+                }
+                loginButton.setEnabled(loginFormState.isDataValid());
+                if (loginFormState.getUsernameError() != null) {
+                    usernameEditText.setError(getString(loginFormState.getUsernameError()));
+                }
+                if (loginFormState.getPasswordError() != null) {
+                    passwordEditText.setError(getString(loginFormState.getPasswordError()));
+                }
+            }
+
+        });
+```
+
+
+
+# Login.class After Enhancements
 <p align="center">
   <img width="460" height="700" src="loginpage.png">
 </p>
@@ -154,7 +196,7 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ```
 
 
--Example xml code from activity_login.xml
+## Example xml code from activity_login.xml
 
 ```markdown
 <!--Email or username edit text for the user to enter information-->
@@ -177,14 +219,17 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
         android:textColorHint="@color/black" />
 ```
 
-- Link to Login Code: [Login](AndroidEnhancement.zip), 
+- Link to Login Code: [Login](AndroidEnhancement.zip)
 - Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_login.xml  
 
 # Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
 
+# Forgot Password Features Before Enhancements
+- No available code, this feature was just a display 
 
+# Forgot Password Features After Enhancements
 
 <p align="center">
   <img width="460" height="700" src="forgotpassword.png">
@@ -226,7 +271,7 @@ private void forgotPassword() {
                 .show();
 ```  
 
-- Example code from activity_forgot_password.xml
+# Example code from activity_forgot_password.xml
 
 ```markdown
 <!--Forgot Password function, enter email to get password link-->
@@ -263,6 +308,45 @@ private void forgotPassword() {
 - Main page after logging in, user can scroll through the events available
 - Favorites button is implemented on the screen but is not functional at this time
 
+# HomeFragment.Class Features Before Enhancements
+
+<p align="center">
+  <img width="460" height="700" src="">
+</p>
+
+```markdown
+  private HomeViewModel homeViewModel;
+    private FragmentHomeBinding binding;
+
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+
+        homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.textHome;
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textView.setText(s);
+            }
+        });
+        return root;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+}
+```
+
+
+# HomeFragment.Class Features After Enhancements
 <p align="center">
   <img width="460" height="700" src="homepage.png">
 </p>
@@ -308,8 +392,7 @@ private void forgotPassword() {
 
         return view;
 ```
-
-- Example code from fragment_home.xml
+# Example code from fragment_home.xml
 
 ```markdown
 
@@ -340,6 +423,30 @@ private void forgotPassword() {
 # Favorites Page
 -Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
 
+# FavoritesFragment.class Before Enhancements
+
+```markdown
+public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        dashboardViewModel =
+                new ViewModelProvider(this).get(DashboardViewModel.class);
+
+        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.textDashboard;
+        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                textView.setText(s);
+            }
+        });
+        return root;
+    }
+```
+
+# FavoritesFragment.class After Enhancements
+
 ```markdown
 public class FavoritesFragment extends Fragment {
 
@@ -363,7 +470,7 @@ public class FavoritesFragment extends Fragment {
         return root;
     }
 ```
--Example of fragment_favorites.xml
+# Example of fragment_favorites.xml
 
 ```markdown
   <androidx.recyclerview.widget.RecyclerView
@@ -380,6 +487,32 @@ public class FavoritesFragment extends Fragment {
 # Profile Page
 -The profile page displays all settings that the user can access. At this time this portion is not clickable, except for the log out button. The user may log out of the application via this page in which they will be sent back to the main page. 
 
+
+# Profile Page Before Enhancements
+-Was set as a permissions page originally
+```markdown
+@Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.fragment_notifications);
+
+            Button buttonRequest = findViewById(R.id.button);
+            buttonRequest.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (ContextCompat.checkSelfPermission(Permissions.this,
+                            Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(Permissions.this, "You have already granted this permission!",
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        requestStoragePermission();
+                    }
+                }
+            });
+        }
+```
+
+# Profile Page After Enhancements
 <p align="center">
   <img width="460" height="700" src="settingspage.png">
 </p>
@@ -410,7 +543,7 @@ public class ProfileFragment extends Fragment {
     }
 ```
 
--Example of fragment_profile.xml
+# Example of fragment_profile.xml
 ```markdown
 <!---Option 1: in settings-->
             <LinearLayout
