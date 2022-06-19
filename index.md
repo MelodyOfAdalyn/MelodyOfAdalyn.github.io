@@ -24,9 +24,7 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
  -Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
  -Original Code from Login Features without Firebase
  
- 
- 
- 
+
  -Enhanced code from Login Feature with Firebase
 <p align="center">
   <img width="460" height="700" src="loginpage.png">
@@ -68,7 +66,9 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 
         });
 ```
--Link to Login Code: [Login](url)
+-Link to Login Code: [Login](AndroidEnhancement.zip), 
+-Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
+-activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout
 
 # Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
