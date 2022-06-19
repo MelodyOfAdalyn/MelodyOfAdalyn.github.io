@@ -68,7 +68,6 @@ Syntax highlighted code block
 
 **Bold** and _Italic_ and `Code` text
 
-![Page Example](loginpage.png)
 [Link](url) and ![Image](src)
 ```
 # Forgot Password
