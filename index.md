@@ -173,33 +173,65 @@ private void forgotPassword() {
                 .create()
                 .show();
 ```  
-- Link to Forgot Password Code: [Forgot Password](AndroidEnhancement.zip), 
+- Link to Forgot Password: [Forgot Password](AndroidEnhancement.zip), 
 - Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
 - activity_forgot_password.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_forgot_password.xml  
 
 
 
 
-### Software Engineering
+#Homepage
+-Main page after logging in, user can scroll through the events available
+-Favorites buttion is implemented on the screen but is not functional at this time
+
+<p align="center">
+  <img width="460" height="700" src="homepage.png">
+</p>
+
 
 ```markdown
-Syntax highlighted code block
+ @Override
+    public View onCreateView(
+            LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
 
-# Header 1
-## Header 2
-### Header 3
+        View view = inflater.inflate(R.layout.fragment_home,container,false);
+        recview = (RecyclerView) view.findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataholder = new ArrayList<EventItem>();
+//Information that will placed into the array in order to display events to the users in the app
+        EventItem ob1 = new EventItem(R.drawable.daughtry,R.drawable.ic_baseline_favorite_border_24,"Daughtry","Sat,Aug 27,7 PM – Sun,Aug 28,12 AM","Mount Airy Casino         Resort, PA", "0","0");
+        dataholder.add(ob1);
 
-- Bulleted
-- List
+        EventItem ob2 = new EventItem(R.drawable.dreamcatcher,R.drawable.ic_baseline_favorite_border_24,"Dreamcatcher","Fri, Jul 1, 7:00 – 11:30 PM","Santander Arena           Penn St,PA", "1","0");
+        dataholder.add(ob2);
 
-1. Numbered
-2. List
+        EventItem ob3 = new EventItem(R.drawable.askingalexandria,R.drawable.ic_baseline_favorite_border_24,"Asking Alexandria","Sun, June 5, 6:35pm","Agora Theatre,           Cleveland, OH", "2","0");
+        dataholder.add(ob3);
 
-**Bold** and _Italic_ and `Code` text
+        EventItem ob4 = new EventItem(R.drawable.colossalconeast,R.drawable.ic_baseline_favorite_border_24,"Colossalcon East","Fri, Sep 9, 1 PM – Sun, Sep 11, 4              PM","Kalahari Resorts Poconos, PA", "3","0");
+        dataholder.add(ob4);
 
-[Link](url) and ![Image](src)
+        EventItem ob5 = new EventItem(R.drawable.newyorkcomiccon,R.drawable.ic_baseline_favorite_border_24,"New York Comic Con","Thu,Oct 6 - Sun, Oct 9","Javits                Center", "4","0");
+        dataholder.add(ob5);
+
+        EventItem ob6 = new EventItem(R.drawable.hackathon,R.drawable.ic_baseline_favorite_border_24,"Inclusive Data Hackathon","Fri, June 17, 8:00pm","Online Event",         "5","0");
+        dataholder.add(ob6);
+
+        EventItem ob7 = new EventItem(R.drawable.sportech,R.drawable.ic_baseline_favorite_border_24,"Sports Tech Hackathon","Fri, Jul 15th – Jul 19th","Online Event",         "6","0");
+        dataholder.add(ob7);
+
+        EventItem ob8 = new EventItem(R.drawable.inkcar,R.drawable.ic_baseline_favorite_border_24,"Inkcarceration 2022","Fri,July 15 - Sun, Jul 17","Mansfield, OH",           "7","0");
+        dataholder.add(ob8);
+        
+        recview.setAdapter(new EventAdapter(dataholder));
+
+        return view;
 ```
-
+- Link to Home Page: [Home](AndroidEnhancement.zip), 
+- HomeFragment.class:AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\ui\home\HomeFragment
+- fragment_home.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\fragment_home.xml
 
 
 ### Algorithms and Data Structures
