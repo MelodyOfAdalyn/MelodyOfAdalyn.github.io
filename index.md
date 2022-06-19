@@ -292,7 +292,7 @@ public class ProfileFragment extends Fragment {
         return v;
     }
 ```
-- Link to Profile Code: [Settings](AndroidEnhancement.zip), 
+- Link to Profile Code: [Profile](AndroidEnhancement.zip), 
 - AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\notifications\ProfileFragment
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layoutfragment_profile.xml  
 
