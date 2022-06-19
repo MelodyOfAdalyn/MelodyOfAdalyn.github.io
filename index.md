@@ -260,45 +260,43 @@ public class FavoritesFragment extends Fragment {
         return root;
     }
 ```
-# Settings Page
--Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
+- Link to Favorites Code: [Favorites](AndroidEnhancement.zip), 
+- FavoritesFragment.class: AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\dashboard\FavoritesFragment
+- activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layoutfragment_favorites.xml  
 
-
+# Profile Page
+-The profile page displays all settings that the user can access. At this time this portion is not clickable, except for the log out button. The user may log out of the application via this page in which they will be sent back to the main page. 
 
 ```markdown
-<LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="40dp"
-                android:orientation = "vertical"
-                android:padding="15dp">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true">
+public class ProfileFragment extends Fragment {
+    Button logoutBtn;
+    private FragmentProfileBinding binding;
 
-                    <ImageView
-                        android:id="@+id/settingoption"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:contentDescription="TODO"
-                        android:padding="12dp"
-                        android:src="@drawable/ic_baseline_notifications_24" />
+    public View onCreateView(@NonNull LayoutInflater inflater,
+        ViewGroup container, Bundle savedInstanceState) {
+        ProfileViewModel profileViewModel =
+                new ViewModelProvider(this).get(ProfileViewModel.class);
+        //Implement log out figure with firebase information
+        View v = inflater.inflate(R.layout.fragment_profile,container, false);
 
-                    <TextView
-                        android:layout_width="113dp"
-                        android:layout_height="29dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="170dp"
-                        android:text="Notifications"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+        logoutBtn = v.findViewById(R.id.signoff_btn);
+        
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(getActivity(), Login.class);
+                startActivity(intent);
+            }
+        });
+        return v;
+    }
 ```
+- Link to Profile Code: [Settings](AndroidEnhancement.zip), 
+- AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\notifications\ProfileFragment
+- activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layoutfragment_profile.xml  
+
+
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
