@@ -127,6 +127,13 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 
 # Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
+
+
+
+<p align="center">
+  <img width="460" height="700" src="forgotpassword.png">
+</p>
+ 
   ```markdown
 private void forgotPassword() {
         View view = inflater.inflate(R.layout.activity_forgot_password,null);
