@@ -25,15 +25,40 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+//User clicks the login_button in attempt to login to the application
+        login_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //extract and validate com.example.apppageadjustment.ui.data
+               if(username.getText().toString().isEmpty()) {
+                   username.setError("Please enter Email");
+                   return;
+               }
+               if(password.getText().toString().isEmpty()) {
+                   username.setError("Please enter password");
+                   return;
+               }
+                //com.example.apppageadjustment.ui.data is valid
+                //login user
 
-- Bulleted
-- List
+                firebaseAuth.signInWithEmailAndPassword(username.getText()
+                        .toString(),password.getText()
+                        .toString())
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        startActivity(new Intent(getApplicationContext(),Bot_Nav.class));
 
-1. Numbered
-2. List
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+        });
 
 **Bold** and _Italic_ and `Code` text
 
