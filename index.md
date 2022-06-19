@@ -161,10 +161,10 @@ private void forgotPassword() {
                 .setView(view)
                 .create()
                 .show();
-
-[Link](url) and ![Image](src)
 ```  
-
+- Link to Forgot Password Code: [Forgot Password](AndroidEnhancement.zip), 
+- Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
+- activity_forgot_password.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_forgot_password.xml  
 
 
 
