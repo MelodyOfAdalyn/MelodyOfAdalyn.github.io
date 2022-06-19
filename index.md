@@ -267,6 +267,10 @@ public class FavoritesFragment extends Fragment {
 # Profile Page
 -The profile page displays all settings that the user can access. At this time this portion is not clickable, except for the log out button. The user may log out of the application via this page in which they will be sent back to the main page. 
 
+<p align="center">
+  <img width="460" height="700" src="settingspage.png">
+</p>
+
 ```markdown
 public class ProfileFragment extends Fragment {
     Button logoutBtn;
