@@ -68,6 +68,8 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 
         });
 ```
+-Link to Login Code: [Login](url)
+
 # Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
   ```markdown
