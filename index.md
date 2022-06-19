@@ -6,8 +6,12 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ## Table of Contents
 - Instructions
 - Databases
-- Software Engineering
-- Algorithms and Data Structures
+- Register
+- Login
+- Forgot Password
+- Home Page
+- Favorites Page
+- Settings
 
 ## Instructions
 - In order to navigate this app, the user must first register with the application before being able to reach the navigation pages. 
