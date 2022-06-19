@@ -20,6 +20,60 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ### Databases
   The main database used within this app is Firebase. In this case, Firebase is being utilized in order to store user credentials. This allows the user to enter and exit the application along with restore credentials. 
   
+# Register
+  - User must enter the sign up page first in order to get full functionality of the application. 
+
+  ```markdown
+@Override
+            public void onClick(View view) {
+                //Extract com.example.apppageadjustment.ui.data
+                String fullName = registerName.getText().toString();
+                String emailAddress = registerEmail.getText().toString();
+                String password = registerPassword.getText().toString();
+                String password2 = registerPassword2.getText().toString();
+                //Warn the user if the text fields are empty to fill out the following information
+                if (fullName.isEmpty()) {
+                    registerName.setError("Must Enter a name");
+                    return;
+                }
+                if (emailAddress.isEmpty()) {
+                    registerEmail.setError("Must Enter a Email");
+                    return;
+                }
+                if (password.isEmpty()) {
+                    registerPassword.setError("Must Enter a Password");
+                    return;
+                }
+                if (password2.isEmpty()) {
+                    registerPassword2.setError("Must Enter a Password again");
+                    return;
+                }
+
+                //Password dont match currently
+                if (!password.equals(password2)) {
+                    registerPassword2.setError("Passwords do not match, try again");
+                } else {
+                    //passed, place toast message here to say it passed
+                }
+
+                fAuth.createUserWithEmailAndPassword(emailAddress,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                    //Successful user is at the next page
+                        signup();
+                    }
+
+
+[Link](url) and ![Image](src)
+```   
+  
+  
+  
+  
+  
+  
+  
+  
 # Login 
  -Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
  -Original Code from Login Features without Firebase
@@ -89,26 +143,7 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```  
-# Register
-  - User must enter the sign up page first in order to get full functionality of the application. 
 
-  ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```  
 
 
 
