@@ -180,7 +180,7 @@ private void forgotPassword() {
 
 
 
-# Homepage
+# Home Page
 - Main page after logging in, user can scroll through the events available
 - Favorites button is implemented on the screen but is not functional at this time
 
@@ -234,7 +234,7 @@ private void forgotPassword() {
 - fragment_home.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\fragment_home.xml
 
 
-# Favorites page
+# Favorites Page
 -Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
 
 ```markdown
@@ -260,8 +260,45 @@ public class FavoritesFragment extends Fragment {
         return root;
     }
 ```
+# Settings Page
+-Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
 
 
+
+```markdown
+<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation = "vertical"
+                android:padding="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/settingoption"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="TODO"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_baseline_notifications_24" />
+
+                    <TextView
+                        android:layout_width="113dp"
+                        android:layout_height="29dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="170dp"
+                        android:text="Notifications"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+```
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
