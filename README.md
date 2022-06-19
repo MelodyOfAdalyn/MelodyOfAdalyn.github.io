@@ -1,5 +1,8 @@
 # Welcome! 
 
+# Website Link
+Please go to: https://melodyofadalyn.github.io/
+
 # Introduction
 One artifact was chosen to represent growth in software engineering, databases, and algorithms and structures. That artifact is the android app I had developed for an application course. This artifact was chosen in particular because apps typically incorporate a variety of different elements. Databases to view information that the user interacts with, software complexity which could include the display, or the structure of the app. Which is important to ensure security and decrease the amount of software patches that could be needed. 
 
@@ -28,5 +31,4 @@ As for event information, this was more complex. This may not be working properl
 # Algorithms and Structures
 The main enhancements here involve the page flow. The artifact originally did include the bottom navigation bar although it would crash periodically causing it to not flow properly. The login, register, and forgot password page all flow with each other within the updated version of this app. As well as the when the user logs in the login feature will now take them to the home page of the app in which they can now navigate through all pages listed on the bottom navigation bar. The only page that does not include clickable items is the settings page (Aside from the sign out button, which will take the user back to the sign in page). Another feature that helps to increase the structure of the app is the ability to add and remove events from the favorites page by interacting them on the home page. This is not fully completed but is partly implemented in the app due to some obstacles. 
 
-# Website Link
-Please go to: https://melodyofadalyn.github.io/
+
