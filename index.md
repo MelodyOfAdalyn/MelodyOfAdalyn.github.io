@@ -22,6 +22,12 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
   
 # Register
   - User must enter the sign up page first in order to get full functionality of the application. 
+  - Enter all credentials in order to gain access to the apps features
+
+<p align="center">
+  <img width="460" height="700" src="register.png">
+</p>
+
 
   ```markdown
 @Override
@@ -63,17 +69,12 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
                         signup();
                     }
 
-
-[Link](url) and ![Image](src)
 ```   
+- Link to Login Code: [Register](AndroidEnhancement.zip), 
+- Register.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Register
+- activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_register.xml  
   
-  
-  
-  
-  
-  
-  
-  
+
 # Login 
  -Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
  -Original Code from Login Features without Firebase
@@ -122,24 +123,44 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
 ```
 - Link to Login Code: [Login](AndroidEnhancement.zip), 
 - Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
-- activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout
+- activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_login.xml  
 
 # Forgot Password
   - User forgot credentials to get into the application. Click the forgot password button. If the user email is a valid address then an email notification will be sent to the user to enter a new password. 
   ```markdown
-Syntax highlighted code block
+private void forgotPassword() {
+        View view = inflater.inflate(R.layout.activity_forgot_password,null);
+        resetAlert.setTitle("Forgot Password?")
+                .setMessage("Enter your email and a password request will be sent")
+                .setPositiveButton("Request", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        //Validate email address
+                        EditText email = view.findViewById(R.id.email);
+                        if(email.getText().toString().isEmpty()){
+                            email.setError("Required field");
+                            return;
+                        }
 
-# Header 1
-## Header 2
-### Header 3
+                        firebaseAuth.sendPasswordResetEmail(email.getText().toString()).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(Login.this, "Request Sent",Toast.LENGTH_SHORT).show();
 
-- Bulleted
-- List
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Login.this, e.getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                        //Send reset link
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
+                    }
+                }).setNegativeButton("Cancel",null)
+                .setView(view)
+                .create()
+                .show();
 
 [Link](url) and ![Image](src)
 ```  
