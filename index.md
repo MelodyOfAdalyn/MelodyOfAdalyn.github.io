@@ -128,7 +128,7 @@ public class Register extends AppCompatActivity {
  - 
 ## Login.class Before Enhancements
  <p align="center">
-  <img width="460" height="700" src="Originallogin">
+  <img width="460" height="700" src="Originallogin.png">
 </p>
 
 ```markdown
@@ -311,7 +311,7 @@ private void forgotPassword() {
 # HomeFragment.Class Features Before Enhancements
 
 <p align="center">
-  <img width="460" height="700" src="originalhome">
+  <img width="460" height="700" src="originalhome.png">
 </p>
 
 ```markdown
