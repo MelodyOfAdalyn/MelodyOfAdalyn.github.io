@@ -20,6 +20,15 @@ Enhancements were first added to the login features of the app. Seeing as there 
 
 Once the user logs into the app, it will not crash. With increased knowledge on how to use inflater methods and call upon the correct classes. We can see that the user can go from the login page to the home page without any issues as long as all credentials are valid. From here, an array was implemented to view events and scroll views were included so that the user can look through a variety of different events at one time.  The favorites page would work similarly, but is not running at this time because of issues with the inflater. Although, this would work similarly to the adapter for the events in which the favorited events would be placed into an array. They would be removed from the page based on the users’ decisions based on a button. Lastly, the settings page is also reachable, in which shows some settings information. Although this still needs to be connected to the database to show the user’s actual name. Along with their profile picture. 
 
+# Improvements and Growth 
+
+Ultimately this course, I have practiced secure coding, focused on variable naming conventions, reusability and writing as few lines as possible. I was able to achieve this by implementing these practices throughout the android app. Removing unnecessary files and code by making classes such as the login.class handle more functions. While other classes such as the bot_nav.class were broken into several fragments in order to assist in scaling the project. Security features were implemented through the login.class in which credentials are maintained and tracked through firebase. Athough, I did not work with a team on this project, I did take in feedback from my instructor to implement more comments throughout the project so that in the future other programmers could look at the code and navigate it more easily. I took what I learned from my internship, this course, and past courses to improve my coding practices and create an app that can login, logout, and allow users to interact within its UI.  
+
+
+
+
+
+
 
 
 
