@@ -31,6 +31,8 @@ Welcome to the Android App! The primary purpose of the app is to allow the user 
   - If fields are not filled out or passwords do not match the user will not be able to sign up
 
 ## Register.class Before Enhancements
+- Did not originally store user credentials
+- Buttons would exit, but not submit
 
 <p align="center">
   <img width="460" height="700" src="originalregister.png">
@@ -47,6 +49,11 @@ public class Register extends AppCompatActivity {
 }
 ``` 
 ## Register.class After Enhancements
+- Register class now logs the information that is entered into it
+- Submit and cancel buttons navigate the user to the appropriate page
+- If credentials are not met, the user cannot create an account
+
+
 <p align="center">
   <img width="460" height="700" src="register.png">
 </p>
@@ -127,6 +134,9 @@ public class Register extends AppCompatActivity {
  - Logging into the app allows the user to access the features of this app. This is tied into Firebase so all information entered will be stored within the database for future usage. This allows the user to log in and out of this app with the credentials that they had entered into the system. 
  - 
 ## Login.class Before Enhancements
+- Login feature did not work properly, originally having errors where the user code log in without entering data
+- No security was implemented to store or maintain user information
+
  <p align="center">
   <img width="460" height="700" src="Originallogin.png">
 </p>
@@ -154,6 +164,10 @@ public class Register extends AppCompatActivity {
 
 
 # Login.class After Enhancements
+-Firebase was included to maintain and secure user input
+-User can now log in or out at any time while their information is being stored in firebase
+-Buttons (such as sign up and forgot password are also reachable within the code)
+
 <p align="center">
   <img width="460" height="700" src="loginpage.png">
 </p>
@@ -230,6 +244,7 @@ public class Register extends AppCompatActivity {
 - No available code, this feature was just a display 
 
 # Forgot Password Features After Enhancements
+-Request button will send the user a link to reset the password to the account
 
 <p align="center">
   <img width="460" height="700" src="forgotpassword.png">
@@ -297,7 +312,7 @@ private void forgotPassword() {
 ```  
 
 
-- Link to Forgot Password: [Forgot Password](AndroidEnhancement.zip), 
+- Link to Forgot Password: [Forgot Password](AndroidEnhancement.zip)
 - Login.class: AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\Login
 - activity_forgot_password.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\activity_forgot_password.xml  
 
@@ -309,6 +324,8 @@ private void forgotPassword() {
 - Favorites button is implemented on the screen but is not functional at this time
 
 # HomeFragment.Class Features Before Enhancements
+- Home page did not have event information nor did it incorporate a complex layout for future enhancements
+- Display only showed vectors not actual event information
 
 <p align="center">
   <img width="460" height="700" src="originalhome.png">
@@ -347,6 +364,10 @@ private void forgotPassword() {
 
 
 # HomeFragment.Class Features After Enhancements
+- Scroll view was implemented along with button to favorite events although the button is currently not operational
+- Home fragment is reachable after user logs into the app
+- Home fragment connects to all pages throughout the navigation bar
+
 <p align="center">
   <img width="460" height="700" src="homepage.png">
 </p>
@@ -415,15 +436,17 @@ private void forgotPassword() {
 ```
 
 
-- Link to Home Page: [Home](AndroidEnhancement.zip), 
+- Link to Home Page: [Home](AndroidEnhancement.zip)
 - HomeFragment.class:AndroidEnhancement.zip\AndroidEnhance\app\src\main\java\com\example\apppageadjustment\ui\home\HomeFragment
 - fragment_home.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layout\fragment_home.xml
 
 
 # Favorites Page
--Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
+- Due to obstacles while coding this portion, this page is currently blank. With future edits, this app with be able to transfer items the user favorites on the home page and move it to the favorties page. 
 
 # FavoritesFragment.class Before Enhancements
+- fragment was not connected to any sort of database layout 
+- acted more as a display 
 
 ```markdown
 public View onCreateView(@NonNull LayoutInflater inflater,
@@ -446,6 +469,8 @@ public View onCreateView(@NonNull LayoutInflater inflater,
 ```
 
 # FavoritesFragment.class After Enhancements
+- Incorporates SQLite and a list to store event information
+- Not tied into the home page at this time due to inflater conflicts within the app 
 
 ```markdown
 public class FavoritesFragment extends Fragment {
@@ -480,7 +505,7 @@ public class FavoritesFragment extends Fragment {
         android:paddingBottom="?attr/actionBarSize"
         android:clipToPadding="false"/>
 ```
-- Link to Favorites Code: [Favorites](AndroidEnhancement.zip), 
+- Link to Favorites Code: [Favorites](AndroidEnhancement.zip)
 - FavoritesFragment.class: AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\dashboard\FavoritesFragment
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layoutfragment_favorites.xml  
 
@@ -489,7 +514,7 @@ public class FavoritesFragment extends Fragment {
 
 
 # Profile Page Before Enhancements
--Was set as a permissions page originally
+- Was set as a permissions page originally
 ```markdown
 @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -513,6 +538,9 @@ public class FavoritesFragment extends Fragment {
 ```
 
 # Profile Page After Enhancements
+- Displays a variety of different options for the settings of the profile page
+- The log out button is located here in order to sign out of the app (only clickable button here)
+
 <p align="center">
   <img width="460" height="700" src="settingspage.png">
 </p>
@@ -591,7 +619,7 @@ public class ProfileFragment extends Fragment {
                 </RelativeLayout>
 ```
 
-- Link to Profile Code: [Profile](AndroidEnhancement.zip), 
+- Link to Profile Code: [Profile](AndroidEnhancement.zip)
 - Profile Fragments.class: AppPageAdjustment\app\src\main\java\com\example\apppageadjustment\ui\notifications\ProfileFragment
 - activity_login.XML: AndroidEnhancement.zip\AndroidEnhance\app\src\main\res\layoutfragment_profile.xml  
 
