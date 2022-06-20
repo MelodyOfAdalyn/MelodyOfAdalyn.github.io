@@ -164,9 +164,9 @@ public class Register extends AppCompatActivity {
 
 
 # Login.class After Enhancements
--Firebase was included to maintain and secure user input
--User can now log in or out at any time while their information is being stored in firebase
--Buttons (such as sign up and forgot password are also reachable within the code)
+- Firebase was included to maintain and secure user input
+- User can now log in or out at any time while their information is being stored in firebase
+- Buttons (such as sign up and forgot password are also reachable within the code)
 
 <p align="center">
   <img width="460" height="700" src="loginpage.png">
